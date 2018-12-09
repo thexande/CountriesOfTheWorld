@@ -1,0 +1,15 @@
+query World {
+    countries {
+        name
+        currency
+        phone
+        emoji
+        native
+        languages {
+            name
+        }
+        continent {
+            name
+        }
+    }
+}

@@ -30,7 +30,9 @@ protocol WorldStoreInterface {
 
 extension WorldStoreInterface {
     func fetchAllCountries(completion: @escaping ((Result<[World.Country], World.StoreError>) -> Void)) {
-
+        let query = WorldQuery()
+        
+        
     }
 }
 
