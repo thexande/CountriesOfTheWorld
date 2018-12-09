@@ -25,14 +25,24 @@ extension ApolloClient: ApolloClientInterface { }
 protocol WorldStoreInterface {
     var client: ApolloClientInterface { get }
     
-    func fetchAllCountries(completion: @escaping ((Result<[World.Country], World.StoreError>) -> Void))
+    func fetchAllCountries(cachePolicy: CachePolicy,
+                           completion: @escaping ((Result<[World.Country], World.StoreError>) -> Void))
 }
 
 extension WorldStoreInterface {
-    func fetchAllCountries(completion: @escaping ((Result<[World.Country], World.StoreError>) -> Void)) {
+    func fetchAllCountries(cachePolicy: CachePolicy = .fetchIgnoringCacheData,
+                           completion: @escaping ((Result<[World.Country], World.StoreError>) -> Void)) {
         let query = WorldQuery()
+        let queue = DispatchQueue.global(qos: .default)
         
+        let resultHandler: OperationResultHandler<WorldQuery> = { (result, error) in
+            
+        }
         
+        client.fetch(query: query,
+                     cachePolicy: cachePolicy,
+                     queue: queue,
+                     resultHandler: resultHandler)
     }
 }
 
