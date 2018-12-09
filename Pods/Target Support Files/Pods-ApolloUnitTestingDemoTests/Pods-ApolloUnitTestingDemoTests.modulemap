@@ -1,0 +1,6 @@
+framework module Pods_ApolloUnitTestingDemoTests {
+  umbrella header "Pods-ApolloUnitTestingDemoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
