@@ -11,7 +11,7 @@ import Apollo
 
 class ViewController: UIViewController {
     
-    var store: WorldStore?
+//    var store: WorldStore?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +21,16 @@ class ViewController: UIViewController {
             return
         }
         
-       store = WorldStore(client: ApolloClient(url: url))
+//       store = WorldStore(client: ApolloClient(url: url))
         
-        store?.fetchAllCountries { (result) in
-            switch result {
-            case let .success(properties):
-                print(properties)
-            case let .failure(error):
-                print(error)
-            }
-        }
+//        store?.fetchAllCountries { (result) in
+//            switch result {
+//            case let .success(properties):
+//                print(properties)
+//            case let .failure(error):
+//                print(error)
+//            }
+//        }
     }
 }
 
