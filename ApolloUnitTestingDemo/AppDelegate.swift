@@ -1,4 +1,13 @@
+//
+//  AppDelegate.swift
+//  ApolloUnitTestingDemo
+//
+//  Created by Alexander Murphy on 12/8/18.
+//  Copyright © 2018 Alexander Murphy. All rights reserved.
+//
+
 import UIKit
+import Apollo
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
