@@ -16,6 +16,7 @@
 		B05C5BF921BE3FEA00C383E4 /* MockGraphQLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5BF521BE3FEA00C383E4 /* MockGraphQLQuery.swift */; };
 		B05C5BFA21BE3FEA00C383E4 /* InMemoryTestCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5BF621BE3FEA00C383E4 /* InMemoryTestCacheProvider.swift */; };
 		B05C5BFB21BE3FEA00C383E4 /* InMemoryNormalizedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5BF721BE3FEA00C383E4 /* InMemoryNormalizedCache.swift */; };
+		B05C5C0121BE44F300C383E4 /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05C5C0021BE44F300C383E4 /* Apollo.framework */; };
 		B0FDA51321BE334200AF1720 /* WorldAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FDA50921BE334200AF1720 /* WorldAPI.framework */; };
 		B0FDA51821BE334200AF1720 /* WorldAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA51721BE334200AF1720 /* WorldAPITests.swift */; };
 		B0FDA51A21BE334200AF1720 /* WorldAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FDA50C21BE334200AF1720 /* WorldAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,6 +46,7 @@
 		B05C5BF521BE3FEA00C383E4 /* MockGraphQLQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockGraphQLQuery.swift; sourceTree = "<group>"; };
 		B05C5BF621BE3FEA00C383E4 /* InMemoryTestCacheProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryTestCacheProvider.swift; sourceTree = "<group>"; };
 		B05C5BF721BE3FEA00C383E4 /* InMemoryNormalizedCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryNormalizedCache.swift; sourceTree = "<group>"; };
+		B05C5C0021BE44F300C383E4 /* Apollo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Apollo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FDA50921BE334200AF1720 /* WorldAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WorldAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FDA50C21BE334200AF1720 /* WorldAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorldAPI.h; sourceTree = "<group>"; };
 		B0FDA50D21BE334200AF1720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05C5C0121BE44F300C383E4 /* Apollo.framework in Frameworks */,
 				71FA26ADFBA18C129E9ACA41 /* Pods_ApolloUnitTestingDemo_WorldAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +139,7 @@
 		D931C7E3A206B063FE691D2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B05C5C0021BE44F300C383E4 /* Apollo.framework */,
 				697412D015B35086CE0E09E2 /* Pods_ApolloUnitTestingDemo_WorldAPI.framework */,
 				377D861676A1EAE8C1A66835 /* Pods_ApolloUnitTestingDemo_WorldAPI_WorldAPITests.framework */,
 			);
