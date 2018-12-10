@@ -25,5 +25,10 @@ target 'ApolloUnitTestingDemo' do
       pod 'Apollo'
       pod 'Result'
   end
+  
+  target 'WorldAPITests' do
+      inherit! :search_paths
+      pod 'Apollo'
+  end
 
 end

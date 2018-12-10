@@ -11,6 +11,10 @@
 		B048385321BE356A00437896 /* WorldQueries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = B048385021BE356A00437896 /* WorldQueries.graphql */; };
 		B048385421BE356A00437896 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = B048385121BE356A00437896 /* schema.json */; };
 		B048385521BE356A00437896 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B048385221BE356A00437896 /* API.swift */; };
+		B05C5BF821BE3FEA00C383E4 /* MockNetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5BF421BE3FEA00C383E4 /* MockNetworkTransport.swift */; };
+		B05C5BF921BE3FEA00C383E4 /* MockGraphQLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5BF521BE3FEA00C383E4 /* MockGraphQLQuery.swift */; };
+		B05C5BFA21BE3FEA00C383E4 /* InMemoryTestCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5BF621BE3FEA00C383E4 /* InMemoryTestCacheProvider.swift */; };
+		B05C5BFB21BE3FEA00C383E4 /* InMemoryNormalizedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5BF721BE3FEA00C383E4 /* InMemoryNormalizedCache.swift */; };
 		B0FDA51321BE334200AF1720 /* WorldAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FDA50921BE334200AF1720 /* WorldAPI.framework */; };
 		B0FDA51821BE334200AF1720 /* WorldAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA51721BE334200AF1720 /* WorldAPITests.swift */; };
 		B0FDA51A21BE334200AF1720 /* WorldAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FDA50C21BE334200AF1720 /* WorldAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,6 +38,10 @@
 		B048385021BE356A00437896 /* WorldQueries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WorldQueries.graphql; sourceTree = "<group>"; };
 		B048385121BE356A00437896 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		B048385221BE356A00437896 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B05C5BF421BE3FEA00C383E4 /* MockNetworkTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkTransport.swift; sourceTree = "<group>"; };
+		B05C5BF521BE3FEA00C383E4 /* MockGraphQLQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockGraphQLQuery.swift; sourceTree = "<group>"; };
+		B05C5BF621BE3FEA00C383E4 /* InMemoryTestCacheProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryTestCacheProvider.swift; sourceTree = "<group>"; };
+		B05C5BF721BE3FEA00C383E4 /* InMemoryNormalizedCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryNormalizedCache.swift; sourceTree = "<group>"; };
 		B0FDA50921BE334200AF1720 /* WorldAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WorldAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FDA50C21BE334200AF1720 /* WorldAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorldAPI.h; sourceTree = "<group>"; };
 		B0FDA50D21BE334200AF1720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +116,10 @@
 		B0FDA51621BE334200AF1720 /* WorldAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				B05C5BF721BE3FEA00C383E4 /* InMemoryNormalizedCache.swift */,
+				B05C5BF621BE3FEA00C383E4 /* InMemoryTestCacheProvider.swift */,
+				B05C5BF521BE3FEA00C383E4 /* MockGraphQLQuery.swift */,
+				B05C5BF421BE3FEA00C383E4 /* MockNetworkTransport.swift */,
 				B0FDA51721BE334200AF1720 /* WorldAPITests.swift */,
 				B0FDA51921BE334200AF1720 /* Info.plist */,
 			);
@@ -286,7 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05C5BF821BE3FEA00C383E4 /* MockNetworkTransport.swift in Sources */,
+				B05C5BFA21BE3FEA00C383E4 /* InMemoryTestCacheProvider.swift in Sources */,
 				B0FDA51821BE334200AF1720 /* WorldAPITests.swift in Sources */,
+				B05C5BFB21BE3FEA00C383E4 /* InMemoryNormalizedCache.swift in Sources */,
+				B05C5BF921BE3FEA00C383E4 /* MockGraphQLQuery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

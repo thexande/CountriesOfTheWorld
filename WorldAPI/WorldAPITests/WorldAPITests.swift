@@ -1,33 +1,87 @@
-//
-//  WorldAPITests.swift
-//  WorldAPITests
-//
-//  Created by Alexander Murphy on 12/9/18.
-//  Copyright © 2018 Alexander Murphy. All rights reserved.
-//
-
 import XCTest
 @testable import WorldAPI
+@testable import Apollo
 
 class WorldAPITests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_CountriesQuery() {
+        
+        guard let results = MockGraphQLQuery.countries.responseObject else {
+            XCTFail()
+            return
+        }
+        
+        let query = CountriesQuery()
+        
+        withCache(initialRecords: [:]) { cache in
+            
+            let store = ApolloStore(cache: cache)
+            let client = ApolloClient(networkTransport: MockNetworkTransport(body: results),
+                                      store: store)
+            
+            let worldStore = WorldStore(client: client)
+            
+            let expectation = self.expectation(description: "Fetching query")
+            
+            worldStore.fetchAllCountries { result in
+                defer {
+                    expectation.fulfill()
+                }
+                
+                switch result {
+                case .failure:
+                    XCTFail()
+                    return
+                case let .success(data):
+                    
+                    guard let first = data.first else {
+                        XCTFail()
+                        return
+                    }
+                    
+                    let object = World.CountryLite(code: "USA", name: "America", emoji: "🇺🇸")
+                    XCTAssertEqual(object, first)
+                }
+            }
+            
+            self.waitForExpectations(timeout: 5, handler: nil)
+        }
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_CountryQuery() {
+        
+        guard let results = MockGraphQLQuery.country.responseObject else {
+            XCTFail()
+            return
+        }
+        
+        let query = CountryQuery()
+        
+        withCache(initialRecords: [:]) { cache in
+            
+            let store = ApolloStore(cache: cache)
+            let client = ApolloClient(networkTransport: MockNetworkTransport(body: results),
+                                      store: store)
+            
+            let worldStore = WorldStore(client: client)
+            
+            let expectation = self.expectation(description: "Fetching query")
+            
+            worldStore.fetchCountry(code: "AE") { result in
+                defer {
+                    expectation.fulfill()
+                }
+                
+                switch result {
+                case .failure:
+                    XCTFail()
+                    return
+                case let .success(data):
+                    XCTAssert(true)
+                }
+            }
+            
+            self.waitForExpectations(timeout: 5, handler: nil)
         }
     }
 
