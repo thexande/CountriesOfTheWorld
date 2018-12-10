@@ -7,18 +7,18 @@ enum World {
         case network
     }
     
-    struct CountryLite: Codable {
+    struct CountryLite: Hashable {
         let code: String
         let name: String
         let emoji: String
     }
     
-    struct CountryDetail {
-        struct Language {
+    struct CountryDetail: Hashable {
+        struct Language: Hashable {
             let name: String
         }
         
-        struct Continent {
+        struct Continent: Hashable {
             let name: String
         }
         let code: String
@@ -62,7 +62,7 @@ protocol WorldStoreInterface {
 
 extension WorldStoreInterface {
     func fetchCountry(code: String,
-                      cachePolicy: CachePolicy,
+                      cachePolicy: CachePolicy = .fetchIgnoringCacheData,
                       completion: @escaping ((Result<World.CountryDetail, World.StoreError>) -> Void)) {
        
         let query = CountryQuery(code: code)
