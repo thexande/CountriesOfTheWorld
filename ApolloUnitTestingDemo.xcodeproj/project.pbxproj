@@ -10,12 +10,11 @@
 		7A413E959A64487EDB0D077C /* Pods_ApolloUnitTestingDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054CC167CA1CF6CFF1F1E161 /* Pods_ApolloUnitTestingDemo.framework */; };
 		B023FCB421BCE9FC0085472C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023FCB321BCE9FC0085472C /* AppDelegate.swift */; };
 		B023FCB621BCE9FC0085472C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023FCB521BCE9FC0085472C /* ViewController.swift */; };
-		B023FCB921BCE9FC0085472C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B023FCB721BCE9FC0085472C /* Main.storyboard */; };
 		B023FCBB21BCE9FE0085472C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B023FCBA21BCE9FE0085472C /* Assets.xcassets */; };
 		B023FCBE21BCE9FE0085472C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B023FCBC21BCE9FE0085472C /* LaunchScreen.storyboard */; };
 		B023FCC921BCE9FF0085472C /* ApolloUnitTestingDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023FCC821BCE9FF0085472C /* ApolloUnitTestingDemoTests.swift */; };
 		B023FCD421BCE9FF0085472C /* ApolloUnitTestingDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023FCD321BCE9FF0085472C /* ApolloUnitTestingDemoUITests.swift */; };
-		B0FDA4EF21BD872800AF1720 /* CountryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4EE21BD872800AF1720 /* CountryStore.swift */; };
+		B0FDA4EF21BD872800AF1720 /* WorldStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4EE21BD872800AF1720 /* WorldStore.swift */; };
 		B0FDA4F121BD89C000AF1720 /* WorldQueries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = B0FDA4F021BD89C000AF1720 /* WorldQueries.graphql */; };
 		B0FDA4F621BD8DBE00AF1720 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4F521BD8DBE00AF1720 /* API.swift */; };
 		D3C78E06EDE07B8EA1E111BB /* Pods_ApolloUnitTestingDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C0249891DF1835CDAC2540 /* Pods_ApolloUnitTestingDemoTests.framework */; };
@@ -47,7 +46,6 @@
 		B023FCB021BCE9FC0085472C /* ApolloUnitTestingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApolloUnitTestingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B023FCB321BCE9FC0085472C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B023FCB521BCE9FC0085472C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B023FCB821BCE9FC0085472C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B023FCBA21BCE9FE0085472C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B023FCBD21BCE9FE0085472C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B023FCBF21BCE9FE0085472C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,7 +55,7 @@
 		B023FCCF21BCE9FF0085472C /* ApolloUnitTestingDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApolloUnitTestingDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B023FCD321BCE9FF0085472C /* ApolloUnitTestingDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloUnitTestingDemoUITests.swift; sourceTree = "<group>"; };
 		B023FCD521BCE9FF0085472C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0FDA4EE21BD872800AF1720 /* CountryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryStore.swift; sourceTree = "<group>"; };
+		B0FDA4EE21BD872800AF1720 /* WorldStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldStore.swift; sourceTree = "<group>"; };
 		B0FDA4F021BD89C000AF1720 /* WorldQueries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = WorldQueries.graphql; sourceTree = "<group>"; };
 		B0FDA4F521BD8DBE00AF1720 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D27C863FBBB56B7F70EE4137 /* Pods-ApolloUnitTestingDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloUnitTestingDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApolloUnitTestingDemoUITests/Pods-ApolloUnitTestingDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,11 +144,10 @@
 				B0FDA4F521BD8DBE00AF1720 /* API.swift */,
 				B023FCB321BCE9FC0085472C /* AppDelegate.swift */,
 				B023FCB521BCE9FC0085472C /* ViewController.swift */,
-				B023FCB721BCE9FC0085472C /* Main.storyboard */,
 				B023FCBA21BCE9FE0085472C /* Assets.xcassets */,
 				B023FCBC21BCE9FE0085472C /* LaunchScreen.storyboard */,
 				B023FCBF21BCE9FE0085472C /* Info.plist */,
-				B0FDA4EE21BD872800AF1720 /* CountryStore.swift */,
+				B0FDA4EE21BD872800AF1720 /* WorldStore.swift */,
 				B0FDA4F021BD89C000AF1720 /* WorldQueries.graphql */,
 			);
 			path = ApolloUnitTestingDemo;
@@ -285,7 +282,6 @@
 			files = (
 				B023FCBE21BCE9FE0085472C /* LaunchScreen.storyboard in Resources */,
 				B023FCBB21BCE9FE0085472C /* Assets.xcassets in Resources */,
-				B023FCB921BCE9FC0085472C /* Main.storyboard in Resources */,
 				B0FDA4F121BD89C000AF1720 /* WorldQueries.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,7 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B023FCB621BCE9FC0085472C /* ViewController.swift in Sources */,
-				B0FDA4EF21BD872800AF1720 /* CountryStore.swift in Sources */,
+				B0FDA4EF21BD872800AF1720 /* WorldStore.swift in Sources */,
 				B0FDA4F621BD8DBE00AF1720 /* API.swift in Sources */,
 				B023FCB421BCE9FC0085472C /* AppDelegate.swift in Sources */,
 			);
@@ -460,14 +456,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B023FCB721BCE9FC0085472C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B023FCB821BCE9FC0085472C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B023FCBC21BCE9FE0085472C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

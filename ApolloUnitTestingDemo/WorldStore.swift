@@ -43,12 +43,21 @@ extension ApolloClient: ApolloClientInterface { }
 protocol WorldStoreInterface {
     var client: ApolloClientInterface { get }
     
+    // MARK:- Service
+    
     func fetchAllCountries(cachePolicy: CachePolicy,
                            completion: @escaping ((Result<[World.CountryLite], World.StoreError>) -> Void))
     
     func fetchCountry(code: String,
                       cachePolicy: CachePolicy,
                       completion: @escaping ((Result<World.CountryDetail, World.StoreError>) -> Void))
+    
+    // MARK:- Mapping
+    
+    static func makeCountry(from country: CountriesQuery.Data.Country?) -> World.CountryLite?
+    static func makeLanguages(from language: CountryDetail.Language?) -> World.CountryDetail.Language?
+    static func makeContinent(from continent: CountryDetail.Continent?) -> World.CountryDetail.Continent?
+    static func makeCountry(from country: CountryQuery.Data.Country?) -> World.CountryDetail?
 }
 
 extension WorldStoreInterface {
@@ -110,7 +119,7 @@ extension WorldStoreInterface {
                      resultHandler: resultHandler)
     }
     
-    private static func makeCountry(from country: CountriesQuery.Data.Country?) -> World.CountryLite? {
+    static func makeCountry(from country: CountriesQuery.Data.Country?) -> World.CountryLite? {
         
         guard
             let country = country?.fragments.countryLite,
@@ -126,7 +135,7 @@ extension WorldStoreInterface {
                                    emoji: emoji)
     }
         
-    private static func makeCountry(from country: CountryQuery.Data.Country?) -> World.CountryDetail? {
+    static func makeCountry(from country: CountryQuery.Data.Country?) -> World.CountryDetail? {
         
         guard
             let country = country?.fragments.countryDetail,
@@ -150,7 +159,7 @@ extension WorldStoreInterface {
                                    continent: continent)
     }
     
-    private static func makeContinent(from continent: CountryDetail.Continent?) -> World.CountryDetail.Continent? {
+    static func makeContinent(from continent: CountryDetail.Continent?) -> World.CountryDetail.Continent? {
         guard let name = continent?.name else {
             return nil
         }
@@ -158,7 +167,7 @@ extension WorldStoreInterface {
         return World.CountryDetail.Continent(name: name)
     }
 
-    private static func makeLanguages(from language: CountryDetail.Language?) -> World.CountryDetail.Language? {
+    static func makeLanguages(from language: CountryDetail.Language?) -> World.CountryDetail.Language? {
         guard let name = language?.name else {
             return nil
         }
