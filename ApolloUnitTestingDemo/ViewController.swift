@@ -37,7 +37,7 @@ final class CountriesPresenter: CountriesPresenterActionDispatching {
         case selectedCountry(code: String)
     }
     
-    let store: WorldStoreInterface
+    private let store: WorldStoreInterface
     
     var render: ((LoadableViewProperties<[World.CountryLite]>) -> Void)?
     
@@ -49,7 +49,8 @@ final class CountriesPresenter: CountriesPresenterActionDispatching {
             return nil
         }
         
-        self.store = StoreFactory().makeStore(with: url)
+        let factory = StoreFactory()
+        self.store = factory.makeStore(with: url)
     }
     
     func dispatch(_ action: CountriesPresenter.Action) {
@@ -129,7 +130,7 @@ final class CountriesViewController: UITableViewController {
         }
         
         let country = countries[indexPath.row]
-//        cell.textLabel?.text = "\(country.emoji) \(country.name.capitalized)"
+        cell.textLabel?.text = "\(country.emoji) \(country.name.capitalized)"
         cell.textLabel?.font = UIFont.systemFont(ofSize: 24, weight: .regular)
         cell.accessoryType = .disclosureIndicator
         return cell

@@ -8,15 +8,15 @@ public enum World {
     }
     
     public struct CountryLite: Hashable {
-        let code: String
-        let name: String
-        let emoji: String
+        public let code: String
+        public let name: String
+        public let emoji: String
     }
     
     public struct CountryDetail: Hashable {
         
         public struct Language: Hashable {
-            let name: String
+            public let name: String
             
             public init(name: String) {
                 self.name = name
@@ -24,20 +24,20 @@ public enum World {
         }
         
         public struct Continent: Hashable {
-            let name: String
+            public let name: String
             
             public init(name: String) {
                 self.name = name
             }
         }
         
-        let code: String
-        let name: String
-        let currency: String
-        let phone: String
-        let emoji: String
-        let languages: [Language]
-        let continent: Continent
+        public let code: String
+        public let name: String
+        public let currency: String
+        public let phone: String
+        public let emoji: String
+        public let languages: [Language]
+        public let continent: Continent
         
         public init(code: String, name: String, currency: String, phone: String, emoji: String, languages: [Language], continent: Continent) {
             self.code = code
