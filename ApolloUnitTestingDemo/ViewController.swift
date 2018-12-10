@@ -42,6 +42,10 @@ final class WorldCoordinator {
         let countriesView = CountriesViewController()
         countriesView.dispatcher = countriesPresenter
         
+        countriesPresenter?.render = { [weak countriesView] data in
+            countriesView?.render(data)
+        }
+        
         nav.viewControllers = [countriesView]
         
     }
@@ -105,19 +109,59 @@ final class CountriesPresenter: CountriesPresenterActionDispatching {
 final class CountriesViewController: UITableViewController {
     
     weak var dispatcher: CountriesPresenterActionDispatching?
-    var countries: [World.CountryLite] = []
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func render(_ properties: LoadableViewProperties<[World.CountryLite]>) {
+        switch properties {
+        case let .data(countries):
+            DispatchQueue.main.async {
+                self.countries = countries
+            }
+        case .error:
+            return
+        case .loading:
+            return
+        }
+    }
+    
+    var countries: [World.CountryLite] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard isViewLoaded else {
+            return
+        }
+        
+        dispatcher?.dispatch(.willAppear)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "🌎 Countries"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.register(UITableViewCell.self,
+                           forCellReuseIdentifier: String(describing: UITableViewCell.self))
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            numberOfRowsInSection section: Int) -> Int {
         return countries.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self)) else {
             return UITableViewCell()
         }
         
         let country = countries[indexPath.row]
         cell.textLabel?.text = "\(country.emoji) \(country.name.capitalized)"
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 24, weight: .regular)
         cell.accessoryType = .disclosureIndicator
         return cell
     }
