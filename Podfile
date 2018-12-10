@@ -22,6 +22,8 @@ target 'ApolloUnitTestingDemo' do
   
   target 'WorldAPI' do
       project './WorldAPI/WorldAPI.xcodeproj'
+      pod 'Apollo'
+      pod 'Result'
   end
 
 end

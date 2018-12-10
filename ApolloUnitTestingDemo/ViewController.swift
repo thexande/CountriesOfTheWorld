@@ -1,5 +1,6 @@
 import UIKit
-import Apollo
+
+import WorldAPI
 
 final class WorldCoordinator {
     var countriesPresenter: CountriesPresenter?
@@ -48,7 +49,7 @@ final class CountriesPresenter: CountriesPresenterActionDispatching {
             return nil
         }
         
-        self.store = WorldStore(client: ApolloClient(url: url))
+        self.store = StoreFactory().makeStore(with: url)
     }
     
     func dispatch(_ action: CountriesPresenter.Action) {
@@ -128,7 +129,7 @@ final class CountriesViewController: UITableViewController {
         }
         
         let country = countries[indexPath.row]
-        cell.textLabel?.text = "\(country.emoji) \(country.name.capitalized)"
+//        cell.textLabel?.text = "\(country.emoji) \(country.name.capitalized)"
         cell.textLabel?.font = UIFont.systemFont(ofSize: 24, weight: .regular)
         cell.accessoryType = .disclosureIndicator
         return cell

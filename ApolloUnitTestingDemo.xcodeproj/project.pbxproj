@@ -14,9 +14,8 @@
 		B023FCBE21BCE9FE0085472C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B023FCBC21BCE9FE0085472C /* LaunchScreen.storyboard */; };
 		B023FCC921BCE9FF0085472C /* ApolloUnitTestingDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023FCC821BCE9FF0085472C /* ApolloUnitTestingDemoTests.swift */; };
 		B023FCD421BCE9FF0085472C /* ApolloUnitTestingDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023FCD321BCE9FF0085472C /* ApolloUnitTestingDemoUITests.swift */; };
+		B048384F21BE34F300437896 /* WorldAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B048384E21BE34F300437896 /* WorldAPI.framework */; };
 		B0FDA4EF21BD872800AF1720 /* WorldStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4EE21BD872800AF1720 /* WorldStore.swift */; };
-		B0FDA4F121BD89C000AF1720 /* WorldQueries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = B0FDA4F021BD89C000AF1720 /* WorldQueries.graphql */; };
-		B0FDA4F621BD8DBE00AF1720 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4F521BD8DBE00AF1720 /* API.swift */; };
 		B0FDA4F821BE216000AF1720 /* InMemoryNormalizedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4F721BE216000AF1720 /* InMemoryNormalizedCache.swift */; };
 		B0FDA4FA21BE217200AF1720 /* InMemoryTestCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4F921BE217200AF1720 /* InMemoryTestCacheProvider.swift */; };
 		B0FDA4FC21BE218A00AF1720 /* MockNetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4FB21BE218A00AF1720 /* MockNetworkTransport.swift */; };
@@ -59,10 +58,9 @@
 		B023FCCF21BCE9FF0085472C /* ApolloUnitTestingDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApolloUnitTestingDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B023FCD321BCE9FF0085472C /* ApolloUnitTestingDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloUnitTestingDemoUITests.swift; sourceTree = "<group>"; };
 		B023FCD521BCE9FF0085472C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B048384E21BE34F300437896 /* WorldAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WorldAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FDA4EE21BD872800AF1720 /* WorldStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldStore.swift; sourceTree = "<group>"; };
-		B0FDA4F021BD89C000AF1720 /* WorldQueries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = WorldQueries.graphql; sourceTree = "<group>"; };
-		B0FDA4F521BD8DBE00AF1720 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		B0FDA4F721BE216000AF1720 /* InMemoryNormalizedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryNormalizedCache.swift; sourceTree = "<group>"; };
+		B0FDA4F721BE216000AF1720 /* InMemoryNormalizedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InMemoryNormalizedCache.swift; path = ../WorldAPI/WorldAPITests/InMemoryNormalizedCache.swift; sourceTree = "<group>"; };
 		B0FDA4F921BE217200AF1720 /* InMemoryTestCacheProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryTestCacheProvider.swift; sourceTree = "<group>"; };
 		B0FDA4FB21BE218A00AF1720 /* MockNetworkTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkTransport.swift; sourceTree = "<group>"; };
 		B0FDA4FD21BE232500AF1720 /* MockGraphQLQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGraphQLQuery.swift; sourceTree = "<group>"; };
@@ -78,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B048384F21BE34F300437896 /* WorldAPI.framework in Frameworks */,
 				7A413E959A64487EDB0D077C /* Pods_ApolloUnitTestingDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,6 +116,7 @@
 		306108C9AAF80B84D5259E36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B048384E21BE34F300437896 /* WorldAPI.framework */,
 				054CC167CA1CF6CFF1F1E161 /* Pods_ApolloUnitTestingDemo.framework */,
 				95C0249891DF1835CDAC2540 /* Pods_ApolloUnitTestingDemoTests.framework */,
 				44F70418776BF90418BD687E /* Pods_ApolloUnitTestingDemoUITests.framework */,
@@ -149,14 +149,12 @@
 		B023FCB221BCE9FC0085472C /* ApolloUnitTestingDemo */ = {
 			isa = PBXGroup;
 			children = (
-				B0FDA4F521BD8DBE00AF1720 /* API.swift */,
 				B023FCB321BCE9FC0085472C /* AppDelegate.swift */,
 				B023FCB521BCE9FC0085472C /* ViewController.swift */,
 				B023FCBA21BCE9FE0085472C /* Assets.xcassets */,
 				B023FCBC21BCE9FE0085472C /* LaunchScreen.storyboard */,
 				B023FCBF21BCE9FE0085472C /* Info.plist */,
 				B0FDA4EE21BD872800AF1720 /* WorldStore.swift */,
-				B0FDA4F021BD89C000AF1720 /* WorldQueries.graphql */,
 			);
 			path = ApolloUnitTestingDemo;
 			sourceTree = "<group>";
@@ -195,7 +193,6 @@
 				B023FCAD21BCE9FC0085472C /* Frameworks */,
 				B023FCAE21BCE9FC0085472C /* Resources */,
 				2529DECC960DA73D1AEAC947 /* [CP] Embed Pods Frameworks */,
-				B0FDA4F421BD8B9600AF1720 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -294,7 +291,6 @@
 			files = (
 				B023FCBE21BCE9FE0085472C /* LaunchScreen.storyboard in Resources */,
 				B023FCBB21BCE9FE0085472C /* Assets.xcassets in Resources */,
-				B0FDA4F121BD89C000AF1720 /* WorldQueries.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,23 +379,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B0FDA4F421BD8B9600AF1720 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-cli.sh codegen:generate --queries=\"$(find . -name '*.graphql')\" --schema=schema.json API.swift\n";
-		};
 		B56F9D884E10C8C382C81945 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -431,7 +410,6 @@
 			files = (
 				B023FCB621BCE9FC0085472C /* ViewController.swift in Sources */,
 				B0FDA4EF21BD872800AF1720 /* WorldStore.swift in Sources */,
-				B0FDA4F621BD8DBE00AF1720 /* API.swift in Sources */,
 				B023FCB421BCE9FC0085472C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

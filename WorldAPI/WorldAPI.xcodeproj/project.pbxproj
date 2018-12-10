@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		71FA26ADFBA18C129E9ACA41 /* Pods_ApolloUnitTestingDemo_WorldAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697412D015B35086CE0E09E2 /* Pods_ApolloUnitTestingDemo_WorldAPI.framework */; };
+		B048385321BE356A00437896 /* WorldQueries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = B048385021BE356A00437896 /* WorldQueries.graphql */; };
+		B048385421BE356A00437896 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = B048385121BE356A00437896 /* schema.json */; };
+		B048385521BE356A00437896 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B048385221BE356A00437896 /* API.swift */; };
 		B0FDA51321BE334200AF1720 /* WorldAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FDA50921BE334200AF1720 /* WorldAPI.framework */; };
 		B0FDA51821BE334200AF1720 /* WorldAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA51721BE334200AF1720 /* WorldAPITests.swift */; };
 		B0FDA51A21BE334200AF1720 /* WorldAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FDA50C21BE334200AF1720 /* WorldAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0FDA52621BE344500AF1720 /* WorldStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA52521BE344500AF1720 /* WorldStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,12 +31,16 @@
 		4DE1CEA66BD26340F340AB29 /* Pods-ApolloUnitTestingDemo-WorldAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloUnitTestingDemo-WorldAPI.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ApolloUnitTestingDemo-WorldAPI/Pods-ApolloUnitTestingDemo-WorldAPI.release.xcconfig"; sourceTree = "<group>"; };
 		697412D015B35086CE0E09E2 /* Pods_ApolloUnitTestingDemo_WorldAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApolloUnitTestingDemo_WorldAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD33E2458B1036A0FB22C7B /* Pods-ApolloUnitTestingDemo-WorldAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloUnitTestingDemo-WorldAPI.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ApolloUnitTestingDemo-WorldAPI/Pods-ApolloUnitTestingDemo-WorldAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		B048385021BE356A00437896 /* WorldQueries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WorldQueries.graphql; sourceTree = "<group>"; };
+		B048385121BE356A00437896 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		B048385221BE356A00437896 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		B0FDA50921BE334200AF1720 /* WorldAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WorldAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FDA50C21BE334200AF1720 /* WorldAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorldAPI.h; sourceTree = "<group>"; };
 		B0FDA50D21BE334200AF1720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0FDA51221BE334200AF1720 /* WorldAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FDA51721BE334200AF1720 /* WorldAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldAPITests.swift; sourceTree = "<group>"; };
 		B0FDA51921BE334200AF1720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0FDA52521BE344500AF1720 /* WorldStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +95,12 @@
 		B0FDA50B21BE334200AF1720 /* WorldAPI */ = {
 			isa = PBXGroup;
 			children = (
+				B048385221BE356A00437896 /* API.swift */,
+				B048385121BE356A00437896 /* schema.json */,
+				B048385021BE356A00437896 /* WorldQueries.graphql */,
 				B0FDA50C21BE334200AF1720 /* WorldAPI.h */,
 				B0FDA50D21BE334200AF1720 /* Info.plist */,
+				B0FDA52521BE344500AF1720 /* WorldStore.swift */,
 			);
 			path = WorldAPI;
 			sourceTree = "<group>";
@@ -133,6 +145,7 @@
 				B0FDA50521BE334200AF1720 /* Sources */,
 				B0FDA50621BE334200AF1720 /* Frameworks */,
 				B0FDA50721BE334200AF1720 /* Resources */,
+				B048385621BE358500437896 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -173,6 +186,7 @@
 				TargetAttributes = {
 					B0FDA50821BE334200AF1720 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					B0FDA51121BE334200AF1720 = {
 						CreatedOnToolsVersion = 10.1;
@@ -202,6 +216,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B048385421BE356A00437896 /* schema.json in Resources */,
+				B048385321BE356A00437896 /* WorldQueries.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +231,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B048385621BE358500437896 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-cli.sh codegen:generate --queries=\"$(find . -name '*.graphql')\" --schema=schema.json API.swift\n";
+		};
 		CF6B3DE3EFDF400C31A9C8E6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,6 +277,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B048385521BE356A00437896 /* API.swift in Sources */,
+				B0FDA52621BE344500AF1720 /* WorldStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +427,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8FD33E2458B1036A0FB22C7B /* Pods-ApolloUnitTestingDemo-WorldAPI.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -409,6 +445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = thexande.WorldAPI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -418,6 +455,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4DE1CEA66BD26340F340AB29 /* Pods-ApolloUnitTestingDemo-WorldAPI.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -443,6 +481,7 @@
 		B0FDA52121BE334200AF1720 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9L49SS68XP;
 				INFOPLIST_FILE = WorldAPITests/Info.plist;
@@ -461,6 +500,7 @@
 		B0FDA52221BE334200AF1720 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9L49SS68XP;
 				INFOPLIST_FILE = WorldAPITests/Info.plist;
