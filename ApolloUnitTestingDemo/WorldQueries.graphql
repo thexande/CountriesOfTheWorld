@@ -25,7 +25,7 @@ fragment CountryLite on Country {
 }
 
 query Country($code:String) {
-    country($code:$code) {
+    country(code: $code) {
         ...CountryLite
     }
 }
