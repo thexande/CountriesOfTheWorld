@@ -24,11 +24,9 @@ target 'ApolloUnitTestingDemo' do
       project './WorldAPI/WorldAPI.xcodeproj'
       pod 'Apollo'
       pod 'Result'
+      
+      target 'WorldAPITests' do
+          pod 'Apollo'
+      end
   end
-  
-  target 'WorldAPITests' do
-      inherit! :search_paths
-      pod 'Apollo'
-  end
-
 end

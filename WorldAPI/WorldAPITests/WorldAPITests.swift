@@ -2,7 +2,7 @@ import XCTest
 @testable import WorldAPI
 @testable import Apollo
 
-class WorldAPITests: XCTestCase {
+final class WorldAPITests: XCTestCase {
 
     func test_CountriesQuery() {
         
