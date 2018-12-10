@@ -1,10 +1,10 @@
-import Apollo
 import Dispatch
 import XCTest
+import Apollo
 
 extension XCTestCase {
     func withCache(initialRecords: RecordSet? = nil,
-                          execute test: (NormalizedCache) throws -> ()) rethrows {
+                   execute test: (NormalizedCache) throws -> ()) rethrows {
         
         return try InMemoryTestCacheProvider.withCache(initialRecords: initialRecords, execute: test)
     }
@@ -30,7 +30,7 @@ final class MockNetworkTransport: NetworkTransport {
     }
     
     func send<Operation>(operation: Operation,
-                                completionHandler: @escaping (_ response: GraphQLResponse<Operation>?, _ error: Error?) -> Void) -> Cancellable {
+                         completionHandler: @escaping (_ response: GraphQLResponse<Operation>?, _ error: Error?) -> Void) -> Cancellable {
         
         DispatchQueue.global(qos: .default).async {
             

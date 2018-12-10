@@ -16,10 +16,6 @@
 		B023FCD421BCE9FF0085472C /* ApolloUnitTestingDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023FCD321BCE9FF0085472C /* ApolloUnitTestingDemoUITests.swift */; };
 		B048384F21BE34F300437896 /* WorldAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B048384E21BE34F300437896 /* WorldAPI.framework */; };
 		B0FDA4EF21BD872800AF1720 /* WorldStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4EE21BD872800AF1720 /* WorldStore.swift */; };
-		B0FDA4F821BE216000AF1720 /* InMemoryNormalizedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4F721BE216000AF1720 /* InMemoryNormalizedCache.swift */; };
-		B0FDA4FA21BE217200AF1720 /* InMemoryTestCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4F921BE217200AF1720 /* InMemoryTestCacheProvider.swift */; };
-		B0FDA4FC21BE218A00AF1720 /* MockNetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4FB21BE218A00AF1720 /* MockNetworkTransport.swift */; };
-		B0FDA4FE21BE232500AF1720 /* MockGraphQLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4FD21BE232500AF1720 /* MockGraphQLQuery.swift */; };
 		D3C78E06EDE07B8EA1E111BB /* Pods_ApolloUnitTestingDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C0249891DF1835CDAC2540 /* Pods_ApolloUnitTestingDemoTests.framework */; };
 		D47C8B1C2E474FA86C8DBEAE /* Pods_ApolloUnitTestingDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F70418776BF90418BD687E /* Pods_ApolloUnitTestingDemoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -60,10 +56,6 @@
 		B023FCD521BCE9FF0085472C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B048384E21BE34F300437896 /* WorldAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WorldAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FDA4EE21BD872800AF1720 /* WorldStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldStore.swift; sourceTree = "<group>"; };
-		B0FDA4F721BE216000AF1720 /* InMemoryNormalizedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InMemoryNormalizedCache.swift; path = ../WorldAPI/WorldAPITests/InMemoryNormalizedCache.swift; sourceTree = "<group>"; };
-		B0FDA4F921BE217200AF1720 /* InMemoryTestCacheProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryTestCacheProvider.swift; sourceTree = "<group>"; };
-		B0FDA4FB21BE218A00AF1720 /* MockNetworkTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkTransport.swift; sourceTree = "<group>"; };
-		B0FDA4FD21BE232500AF1720 /* MockGraphQLQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGraphQLQuery.swift; sourceTree = "<group>"; };
 		D27C863FBBB56B7F70EE4137 /* Pods-ApolloUnitTestingDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloUnitTestingDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApolloUnitTestingDemoUITests/Pods-ApolloUnitTestingDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EB2C052A512BAC6826357CBA /* Pods-ApolloUnitTestingDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloUnitTestingDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApolloUnitTestingDemoUITests/Pods-ApolloUnitTestingDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EFA83D2D32B7F25100294CC1 /* Pods-ApolloUnitTestingDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloUnitTestingDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApolloUnitTestingDemoTests/Pods-ApolloUnitTestingDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,10 +156,6 @@
 			children = (
 				B023FCCA21BCE9FF0085472C /* Info.plist */,
 				B023FCC821BCE9FF0085472C /* ApolloUnitTestingDemoTests.swift */,
-				B0FDA4F721BE216000AF1720 /* InMemoryNormalizedCache.swift */,
-				B0FDA4F921BE217200AF1720 /* InMemoryTestCacheProvider.swift */,
-				B0FDA4FB21BE218A00AF1720 /* MockNetworkTransport.swift */,
-				B0FDA4FD21BE232500AF1720 /* MockGraphQLQuery.swift */,
 			);
 			path = ApolloUnitTestingDemoTests;
 			sourceTree = "<group>";
@@ -320,12 +308,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ApolloUnitTestingDemo/Pods-ApolloUnitTestingDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,11 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0FDA4FE21BE232500AF1720 /* MockGraphQLQuery.swift in Sources */,
 				B023FCC921BCE9FF0085472C /* ApolloUnitTestingDemoTests.swift in Sources */,
-				B0FDA4FC21BE218A00AF1720 /* MockNetworkTransport.swift in Sources */,
-				B0FDA4FA21BE217200AF1720 /* InMemoryTestCacheProvider.swift in Sources */,
-				B0FDA4F821BE216000AF1720 /* InMemoryNormalizedCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

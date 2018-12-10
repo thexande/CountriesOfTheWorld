@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		71FA26ADFBA18C129E9ACA41 /* Pods_ApolloUnitTestingDemo_WorldAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697412D015B35086CE0E09E2 /* Pods_ApolloUnitTestingDemo_WorldAPI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9325310753561063B0B82A40 /* Pods_ApolloUnitTestingDemo_WorldAPI_WorldAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377D861676A1EAE8C1A66835 /* Pods_ApolloUnitTestingDemo_WorldAPI_WorldAPITests.framework */; };
 		B048385321BE356A00437896 /* WorldQueries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = B048385021BE356A00437896 /* WorldQueries.graphql */; };
 		B048385421BE356A00437896 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = B048385121BE356A00437896 /* schema.json */; };
 		B048385521BE356A00437896 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B048385221BE356A00437896 /* API.swift */; };
+		B05C5BF821BE3FEA00C383E4 /* MockNetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5BF421BE3FEA00C383E4 /* MockNetworkTransport.swift */; };
+		B05C5BF921BE3FEA00C383E4 /* MockGraphQLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5BF521BE3FEA00C383E4 /* MockGraphQLQuery.swift */; };
+		B05C5BFA21BE3FEA00C383E4 /* InMemoryTestCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5BF621BE3FEA00C383E4 /* InMemoryTestCacheProvider.swift */; };
+		B05C5BFB21BE3FEA00C383E4 /* InMemoryNormalizedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5BF721BE3FEA00C383E4 /* InMemoryNormalizedCache.swift */; };
 		B0FDA51321BE334200AF1720 /* WorldAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FDA50921BE334200AF1720 /* WorldAPI.framework */; };
 		B0FDA51821BE334200AF1720 /* WorldAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA51721BE334200AF1720 /* WorldAPITests.swift */; };
 		B0FDA51A21BE334200AF1720 /* WorldAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FDA50C21BE334200AF1720 /* WorldAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,12 +33,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		377D861676A1EAE8C1A66835 /* Pods_ApolloUnitTestingDemo_WorldAPI_WorldAPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApolloUnitTestingDemo_WorldAPI_WorldAPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4939C4C920995F077BAA1A08 /* Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests/Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DE1CEA66BD26340F340AB29 /* Pods-ApolloUnitTestingDemo-WorldAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloUnitTestingDemo-WorldAPI.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ApolloUnitTestingDemo-WorldAPI/Pods-ApolloUnitTestingDemo-WorldAPI.release.xcconfig"; sourceTree = "<group>"; };
 		697412D015B35086CE0E09E2 /* Pods_ApolloUnitTestingDemo_WorldAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApolloUnitTestingDemo_WorldAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD33E2458B1036A0FB22C7B /* Pods-ApolloUnitTestingDemo-WorldAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloUnitTestingDemo-WorldAPI.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ApolloUnitTestingDemo-WorldAPI/Pods-ApolloUnitTestingDemo-WorldAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		B048385021BE356A00437896 /* WorldQueries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WorldQueries.graphql; sourceTree = "<group>"; };
 		B048385121BE356A00437896 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		B048385221BE356A00437896 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B05C5BF421BE3FEA00C383E4 /* MockNetworkTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkTransport.swift; sourceTree = "<group>"; };
+		B05C5BF521BE3FEA00C383E4 /* MockGraphQLQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockGraphQLQuery.swift; sourceTree = "<group>"; };
+		B05C5BF621BE3FEA00C383E4 /* InMemoryTestCacheProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryTestCacheProvider.swift; sourceTree = "<group>"; };
+		B05C5BF721BE3FEA00C383E4 /* InMemoryNormalizedCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryNormalizedCache.swift; sourceTree = "<group>"; };
 		B0FDA50921BE334200AF1720 /* WorldAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WorldAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FDA50C21BE334200AF1720 /* WorldAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorldAPI.h; sourceTree = "<group>"; };
 		B0FDA50D21BE334200AF1720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,6 +52,7 @@
 		B0FDA51721BE334200AF1720 /* WorldAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldAPITests.swift; sourceTree = "<group>"; };
 		B0FDA51921BE334200AF1720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0FDA52521BE344500AF1720 /* WorldStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldStore.swift; sourceTree = "<group>"; };
+		C0624BD8AB06CF2FDD88129F /* Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests/Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0FDA51321BE334200AF1720 /* WorldAPI.framework in Frameworks */,
+				9325310753561063B0B82A40 /* Pods_ApolloUnitTestingDemo_WorldAPI_WorldAPITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +81,8 @@
 			children = (
 				8FD33E2458B1036A0FB22C7B /* Pods-ApolloUnitTestingDemo-WorldAPI.debug.xcconfig */,
 				4DE1CEA66BD26340F340AB29 /* Pods-ApolloUnitTestingDemo-WorldAPI.release.xcconfig */,
+				4939C4C920995F077BAA1A08 /* Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests.debug.xcconfig */,
+				C0624BD8AB06CF2FDD88129F /* Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -108,6 +123,10 @@
 		B0FDA51621BE334200AF1720 /* WorldAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				B05C5BF721BE3FEA00C383E4 /* InMemoryNormalizedCache.swift */,
+				B05C5BF621BE3FEA00C383E4 /* InMemoryTestCacheProvider.swift */,
+				B05C5BF521BE3FEA00C383E4 /* MockGraphQLQuery.swift */,
+				B05C5BF421BE3FEA00C383E4 /* MockNetworkTransport.swift */,
 				B0FDA51721BE334200AF1720 /* WorldAPITests.swift */,
 				B0FDA51921BE334200AF1720 /* Info.plist */,
 			);
@@ -118,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				697412D015B35086CE0E09E2 /* Pods_ApolloUnitTestingDemo_WorldAPI.framework */,
+				377D861676A1EAE8C1A66835 /* Pods_ApolloUnitTestingDemo_WorldAPI_WorldAPITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0FDA52021BE334200AF1720 /* Build configuration list for PBXNativeTarget "WorldAPITests" */;
 			buildPhases = (
+				6A3787FE0B0249448A5A2278 /* [CP] Check Pods Manifest.lock */,
 				B0FDA50E21BE334200AF1720 /* Sources */,
 				B0FDA50F21BE334200AF1720 /* Frameworks */,
 				B0FDA51021BE334200AF1720 /* Resources */,
+				47AECA51C439D8D2B2867EBC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,6 +253,52 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		47AECA51C439D8D2B2867EBC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests/Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests/Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A3787FE0B0249448A5A2278 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B048385621BE358500437896 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -286,7 +354,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05C5BF821BE3FEA00C383E4 /* MockNetworkTransport.swift in Sources */,
+				B05C5BFA21BE3FEA00C383E4 /* InMemoryTestCacheProvider.swift in Sources */,
 				B0FDA51821BE334200AF1720 /* WorldAPITests.swift in Sources */,
+				B05C5BFB21BE3FEA00C383E4 /* InMemoryNormalizedCache.swift in Sources */,
+				B05C5BF921BE3FEA00C383E4 /* MockGraphQLQuery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +552,7 @@
 		};
 		B0FDA52121BE334200AF1720 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4939C4C920995F077BAA1A08 /* Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -499,6 +572,7 @@
 		};
 		B0FDA52221BE334200AF1720 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0624BD8AB06CF2FDD88129F /* Pods-ApolloUnitTestingDemo-WorldAPI-WorldAPITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1010"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3848CCB25C6548FC10CE57789E3E2DFD"
-               BuildableName = "Pods_ApolloUnitTestingDemo.framework"
-               BlueprintName = "Pods-ApolloUnitTestingDemo"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "B0FDA50821BE334200AF1720"
+               BuildableName = "WorldAPI.framework"
+               BlueprintName = "WorldAPI"
+               ReferencedContainer = "container:WorldAPI.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,9 +26,29 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B0FDA51121BE334200AF1720"
+               BuildableName = "WorldAPITests.xctest"
+               BlueprintName = "WorldAPITests"
+               ReferencedContainer = "container:WorldAPI.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B0FDA50821BE334200AF1720"
+            BuildableName = "WorldAPI.framework"
+            BlueprintName = "WorldAPI"
+            ReferencedContainer = "container:WorldAPI.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,10 +65,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3848CCB25C6548FC10CE57789E3E2DFD"
-            BuildableName = "Pods_ApolloUnitTestingDemo.framework"
-            BlueprintName = "Pods-ApolloUnitTestingDemo"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "B0FDA50821BE334200AF1720"
+            BuildableName = "WorldAPI.framework"
+            BlueprintName = "WorldAPI"
+            ReferencedContainer = "container:WorldAPI.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -60,6 +80,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B0FDA50821BE334200AF1720"
+            BuildableName = "WorldAPI.framework"
+            BlueprintName = "WorldAPI"
+            ReferencedContainer = "container:WorldAPI.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -5,6 +5,7 @@ workspace 'ApolloUnitTestingDemo.xcworkspace'
 target 'ApolloUnitTestingDemo' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
+  pod 'Apollo'
   pod 'Result'
 
   # Pods for ApolloUnitTestingDemo
@@ -23,6 +24,9 @@ target 'ApolloUnitTestingDemo' do
       project './WorldAPI/WorldAPI.xcodeproj'
       pod 'Apollo'
       pod 'Result'
+      
+      target 'WorldAPITests' do
+          pod 'Apollo'
+      end
   end
-
 end
