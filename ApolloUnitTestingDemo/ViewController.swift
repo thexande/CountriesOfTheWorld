@@ -1,36 +1,5 @@
-//
-//  ViewController.swift
-//  ApolloUnitTestingDemo
-//
-//  Created by Alexander Murphy on 12/8/18.
-//  Copyright © 2018 Alexander Murphy. All rights reserved.
-//
-
 import UIKit
 import Apollo
-
-class ViewController: UIViewController {
-    
-//    var store: WorldStore?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        
-//       store = WorldStore(client: ApolloClient(url: url))
-        
-//        store?.fetchAllCountries { (result) in
-//            switch result {
-//            case let .success(properties):
-//                print(properties)
-//            case let .failure(error):
-//                print(error)
-//            }
-//        }
-    }
-}
-
 
 final class WorldCoordinator {
     var countriesPresenter: CountriesPresenter?
@@ -47,7 +16,6 @@ final class WorldCoordinator {
         }
         
         nav.viewControllers = [countriesView]
-        
     }
 }
 
@@ -123,12 +91,11 @@ final class CountriesViewController: UITableViewController {
         }
     }
     
-    var countries: [World.CountryLite] = [] {
+    private var countries: [World.CountryLite] = [] {
         didSet {
             tableView.reloadData()
         }
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -155,6 +122,7 @@ final class CountriesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self)) else {
             return UITableViewCell()
         }
