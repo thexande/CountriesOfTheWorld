@@ -19,7 +19,7 @@ final class WorldAPITests: XCTestCase {
             let client = ApolloClient(networkTransport: MockNetworkTransport(body: results),
                                       store: store)
             
-            let worldStore = WorldStore(client: client)
+            let worldStore = World.Store(client: client)
             
             let expectation = self.expectation(description: "Fetching query")
             
@@ -63,7 +63,7 @@ final class WorldAPITests: XCTestCase {
             let client = ApolloClient(networkTransport: MockNetworkTransport(body: results),
                                       store: store)
             
-            let worldStore = WorldStore(client: client)
+            let worldStore = World.Store(client: client)
             
             let expectation = self.expectation(description: "Fetching query")
             

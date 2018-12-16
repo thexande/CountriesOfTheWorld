@@ -176,7 +176,7 @@
 //    }
 //}
 //
-//final class WorldStore: WorldStoreInterface {
+//final class World.Store: WorldStoreInterface {
 //    let client: ApolloClientInterface
 //    
 //    init(client: ApolloClientInterface) {

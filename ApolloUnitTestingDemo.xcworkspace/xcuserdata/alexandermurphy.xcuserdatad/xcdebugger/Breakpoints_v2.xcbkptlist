@@ -20,7 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ApolloUnitTestingDemo/ViewController.swift"
-            timestampString = "566120824.522682"
+            timestampString = "566611338.823853"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -36,13 +36,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ApolloUnitTestingDemo/ViewController.swift"
-            timestampString = "566120824.523123"
+            timestampString = "566611338.824677"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "render(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ApolloUnitTestingDemo/ViewController.swift"
+            timestampString = "566611338.8253551"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "refresh()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Result.Result&lt;Swift.Array&lt;WorldAPI.World.CountryLite&gt;, WorldAPI.World.StoreError&gt;) -&gt; () in ApolloUnitTestingDemo.CountriesPresenter.refresh() -&gt; ()"
+                  moduleName = "ApolloUnitTestingDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexandermurphy/Documents/thexande_apps/ApolloUnitTestingDemo/ApolloUnitTestingDemo/ViewController.swift"
+                  timestampString = "566611339.196758"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "118">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Result.Result&lt;Swift.Array&lt;WorldAPI.World.CountryLite&gt;, WorldAPI.World.StoreError&gt;) -&gt; () in ApolloUnitTestingDemo.CountriesPresenter.refresh() -&gt; ()"
+                  moduleName = "ApolloUnitTestingDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexandermurphy/Documents/thexande_apps/ApolloUnitTestingDemo/ApolloUnitTestingDemo/ViewController.swift"
+                  timestampString = "566611339.2027611"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

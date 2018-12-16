@@ -71,7 +71,7 @@ final class CountriesPresenter: CountriesViewActionDispatching {
             return nil
         }
         
-        let factory = StoreFactory()
+        let factory = World.Factory()
         self.store = factory.makeStore(with: url)
     }
     
@@ -86,7 +86,7 @@ final class CountriesPresenter: CountriesViewActionDispatching {
     
     
     func refresh() {
-        store.fetchAllCountries { [weak self] result in
+        store.fetchAllCountries(cachePolicy: .returnCacheDataElseFetch) { [weak self] result in
             switch result {
             case let .success(countries):
                 self?.render?(.data(countries))
@@ -197,7 +197,7 @@ final class CountryPresenter: CountryDetailActionDispatching {
             return nil
         }
         
-        let factory = StoreFactory()
+        let factory = World.Factory()
         self.store = factory.makeStore(with: url)
     }
     
@@ -211,25 +211,30 @@ final class CountryPresenter: CountryDetailActionDispatching {
     
     func refresh() {
         
-        store.fetchCountry(code: code) { [weak self] result in
+        store.fetchCountry(code: code, cachePolicy: .returnCacheDataElseFetch) { [weak self] result in
             switch result {
             case let .success(country):
                 
                 let sections = [
-                CountryDetailViewController.Properties.Section(title: "name", items: [country.name]),
-                CountryDetailViewController.Properties.Section(title: "continent", items: [country.continent.name]),
-                CountryDetailViewController.Properties.Section(title: "currency", items: [country.currency]),
-                CountryDetailViewController.Properties.Section(title: "name", items: [country.name]),
-                ]
+                    CountryDetailViewController.Properties.Section(title: "name", items: [country.name]),
+                    CountryDetailViewController.Properties.Section(title: "flag", items: [country.emoji]),
+                    CountryDetailViewController.Properties.Section(title: "continent", items: [country.continent.name]),
+                    CountryDetailViewController.Properties.Section(title: "currency", items: [country.currency]),
+                    CountryDetailViewController.Properties.Section(title: "languages", items: country.languages.map { $0.name }),
+                    ]
                 
-                self?.render?(.data(CountryDetailViewController.Properties(sections: sections)))
+                let title = "\(country.emoji) \(country.name)"
+                let properties = CountryDetailViewController.Properties(title: title, sections: sections)
+                
+                self?.render?(.data(properties))
+                
             case let .failure(error):
                 return
             }
         }
     }
 }
-    
+
 
 
 protocol CountryDetailActionDispatching: AnyObject {
@@ -250,6 +255,7 @@ final class CountryDetailViewController: UITableViewController {
             let items: [String]
         }
         
+        let title: String
         let sections: [Section]
     }
     
@@ -266,6 +272,7 @@ final class CountryDetailViewController: UITableViewController {
         case let .data(properties):
             DispatchQueue.main.async {
                 self.sections = properties.sections
+                self.title = properties.title
             }
         case .error:
             return

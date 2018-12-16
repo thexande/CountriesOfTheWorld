@@ -39,7 +39,13 @@ public enum World {
         public let languages: [Language]
         public let continent: Continent
         
-        public init(code: String, name: String, currency: String, phone: String, emoji: String, languages: [Language], continent: Continent) {
+        public init(code: String,
+                    name: String,
+                    currency: String,
+                    phone: String,
+                    emoji: String,
+                    languages: [Language],
+                    continent: Continent) {
             self.code = code
             self.name = name
             self.currency = currency
@@ -71,76 +77,80 @@ public protocol WorldStoreInterface {
     func fetchCountry(code: String,
                       cachePolicy: CachePolicy,
                       completion: @escaping ((Result<World.CountryDetail, World.StoreError>) -> Void))
-    
-    // MARK:- Mapping
-    
-    static func makeCountry(from country: CountriesQuery.Data.Country?) -> World.CountryLite?
-    static func makeLanguages(from language: CountryDetail.Language?) -> World.CountryDetail.Language?
-    static func makeContinent(from continent: CountryDetail.Continent?) -> World.CountryDetail.Continent?
-    static func makeCountry(from country: CountryQuery.Data.Country?) -> World.CountryDetail?
 }
 
-extension WorldStoreInterface {
-    public func fetchCountry(code: String,
-                      cachePolicy: CachePolicy = .fetchIgnoringCacheData,
-                      completion: @escaping ((Result<World.CountryDetail, World.StoreError>) -> Void)) {
+extension World {
+    
+    public final class Store: WorldStoreInterface {
         
-        let query = CountryQuery(code: code)
-        let queue = DispatchQueue.global(qos: .default)
+        public let client: ApolloClientInterface
         
-        let resultHandler: OperationResultHandler<CountryQuery> = { (result, error) in
-            
-            guard error == nil else {
-                completion(.failure(.network))
-                return
-            }
-            
-            
-            guard let country = Self.makeCountry(from: result?.data?.country) else {
-                completion(.failure(.parsing))
-                return
-            }
-            
-            completion(.success(country))
-            
+        public init(client: ApolloClientInterface) {
+            self.client = client
         }
         
-        client.fetch(query: query,
-                     cachePolicy: cachePolicy,
-                     queue: queue,
-                     resultHandler: resultHandler)
-    }
-    
-    public func fetchAllCountries(cachePolicy: CachePolicy = .fetchIgnoringCacheData,
-                           completion: @escaping ((Result<[World.CountryLite], World.StoreError>) -> Void)) {
-        
-        let query = CountriesQuery()
-        let queue = DispatchQueue.global(qos: .default)
-        
-        let resultHandler: OperationResultHandler<CountriesQuery> = { (result, error) in
+        public func fetchCountry(code: String,
+                                 cachePolicy: CachePolicy = .fetchIgnoringCacheData,
+                                 completion: @escaping ((Result<World.CountryDetail, World.StoreError>) -> Void)) {
             
-            guard error == nil else {
-                completion(.failure(.network))
-                return
+            let query = CountryQuery(code: code)
+            let queue = DispatchQueue.global(qos: .default)
+            
+            let resultHandler: OperationResultHandler<CountryQuery> = { (result, error) in
+                
+                guard error == nil else {
+                    completion(.failure(.network))
+                    return
+                }
+                
+                
+                guard let country = result?.data?.country.flatMap(World.CountryDetail.init) else {
+                    completion(.failure(.parsing))
+                    return
+                }
+                
+                completion(.success(country))
+                
             }
             
-            
-            guard let countries = result?.data?.countries?.compactMap(Self.makeCountry(from:)) else {
-                completion(.failure(.parsing))
-                return
-            }
-            
-            completion(.success(countries))
+            client.fetch(query: query,
+                         cachePolicy: cachePolicy,
+                         queue: queue,
+                         resultHandler: resultHandler)
         }
         
-        client.fetch(query: query,
-                     cachePolicy: cachePolicy,
-                     queue: queue,
-                     resultHandler: resultHandler)
+        public func fetchAllCountries(cachePolicy: CachePolicy = .fetchIgnoringCacheData,
+                                      completion: @escaping ((Result<[CountryLite], World.StoreError>) -> Void)) {
+            
+            let query = CountriesQuery()
+            let queue = DispatchQueue.global(qos: .default)
+            
+            let resultHandler: OperationResultHandler<CountriesQuery> = { (result, error) in
+                
+                guard error == nil else {
+                    completion(.failure(.network))
+                    return
+                }
+                
+                
+                guard let countries = result?.data?.countries?.compactMap(CountryLite.init) else {
+                    completion(.failure(.parsing))
+                    return
+                }
+                
+                completion(.success(countries))
+            }
+            
+            client.fetch(query: query,
+                         cachePolicy: cachePolicy,
+                         queue: queue,
+                         resultHandler: resultHandler)
+        }
     }
-    
-    public static func makeCountry(from country: CountriesQuery.Data.Country?) -> World.CountryLite? {
-        
+}
+
+fileprivate extension World.CountryLite {
+    init?(country: CountriesQuery.Data.Country?) {
         guard
             let country = country?.fragments.countryLite,
             let code = country.code,
@@ -150,12 +160,36 @@ extension WorldStoreInterface {
                 return nil
         }
         
-        return World.CountryLite(code: code,
-                                 name: name,
-                                 emoji: emoji)
+        self.init(code: code,
+                  name: name,
+                  emoji: emoji)
     }
-    
-    public static func makeCountry(from country: CountryQuery.Data.Country?) -> World.CountryDetail? {
+}
+
+fileprivate extension World.CountryDetail.Continent {
+    init?(continent: CountryDetail.Continent?) {
+        
+        guard let name = continent?.name else {
+            return nil
+        }
+        
+        self.init(name: name)
+    }
+}
+
+fileprivate extension World.CountryDetail.Language {
+    init?(language: CountryDetail.Language?) {
+
+        guard let name = language?.name else {
+            return nil
+        }
+        
+        self.init(name: name)
+    }
+}
+
+fileprivate extension World.CountryDetail {
+    init?(country: CountryQuery.Data.Country?) {
         
         guard
             let country = country?.fragments.countryDetail,
@@ -164,56 +198,35 @@ extension WorldStoreInterface {
             let currency = country.currency,
             let phone = country.phone,
             let emoji = country.emoji,
-            let continent = Self.makeContinent(from: country.continent),
-            let languages = country.languages?.compactMap(Self.makeLanguages(from:))
+            let continent = country.continent.flatMap(World.CountryDetail.Continent.init),
+            let languages = country.languages?.compactMap(World.CountryDetail.Language.init)
             else {
                 return nil
         }
         
-        return World.CountryDetail(code: code,
-                                   name: name,
-                                   currency: currency,
-                                   phone: phone,
-                                   emoji: emoji,
-                                   languages: languages,
-                                   continent: continent)
+        
+        self.init(code: code,
+                  name: name,
+                  currency: currency,
+                  phone: phone,
+                  emoji: emoji,
+                  languages: languages,
+                  continent: continent)
+        
     }
-    
-    public static func makeContinent(from continent: CountryDetail.Continent?) -> World.CountryDetail.Continent? {
-        guard let name = continent?.name else {
-            return nil
+}
+
+// MARK:- `WorldStoreInterface`
+
+
+extension World {
+    public final class Factory {
+        
+        public func makeStore(with url: URL) -> World.Store {
+            return World.Store(client: ApolloClient(url: url))
         }
         
-        return World.CountryDetail.Continent(name: name)
-    }
-    
-    public static func makeLanguages(from language: CountryDetail.Language?) -> World.CountryDetail.Language? {
-        guard let name = language?.name else {
-            return nil
-        }
-        
-        return World.CountryDetail.Language(name: name)
+        public init() { }
     }
 }
-
-public final class WorldStore: WorldStoreInterface {
-    
-    public let client: ApolloClientInterface
-    
-    public init(client: ApolloClientInterface) {
-        self.client = client
-    }
-}
-
-public final class StoreFactory {
-    
-    public func makeStore(with url: URL) -> WorldStore {
-        return WorldStore(client: ApolloClient(url: url))
-    }
-    
-    public init() {
-        
-    }
-}
-
 
