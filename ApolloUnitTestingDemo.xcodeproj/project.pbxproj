@@ -16,6 +16,7 @@
 		B023FCD421BCE9FF0085472C /* ApolloUnitTestingDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023FCD321BCE9FF0085472C /* ApolloUnitTestingDemoUITests.swift */; };
 		B048384F21BE34F300437896 /* WorldAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B048384E21BE34F300437896 /* WorldAPI.framework */; };
 		B05C5C0321BE48A000C383E4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B05C5C0221BE489F00C383E4 /* README.md */; };
+		B05DA9D021C5FA42007A8572 /* TableLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DA9CF21C5FA42007A8572 /* TableLoadingView.swift */; };
 		B0FDA4EF21BD872800AF1720 /* WorldStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4EE21BD872800AF1720 /* WorldStore.swift */; };
 		D3C78E06EDE07B8EA1E111BB /* Pods_ApolloUnitTestingDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C0249891DF1835CDAC2540 /* Pods_ApolloUnitTestingDemoTests.framework */; };
 		D47C8B1C2E474FA86C8DBEAE /* Pods_ApolloUnitTestingDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F70418776BF90418BD687E /* Pods_ApolloUnitTestingDemoUITests.framework */; };
@@ -57,6 +58,7 @@
 		B023FCD521BCE9FF0085472C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B048384E21BE34F300437896 /* WorldAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WorldAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B05C5C0221BE489F00C383E4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B05DA9CF21C5FA42007A8572 /* TableLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableLoadingView.swift; sourceTree = "<group>"; };
 		B0FDA4EE21BD872800AF1720 /* WorldStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldStore.swift; sourceTree = "<group>"; };
 		D27C863FBBB56B7F70EE4137 /* Pods-ApolloUnitTestingDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloUnitTestingDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApolloUnitTestingDemoUITests/Pods-ApolloUnitTestingDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EB2C052A512BAC6826357CBA /* Pods-ApolloUnitTestingDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloUnitTestingDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApolloUnitTestingDemoUITests/Pods-ApolloUnitTestingDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				B023FCBC21BCE9FE0085472C /* LaunchScreen.storyboard */,
 				B023FCBF21BCE9FE0085472C /* Info.plist */,
 				B0FDA4EE21BD872800AF1720 /* WorldStore.swift */,
+				B05DA9CF21C5FA42007A8572 /* TableLoadingView.swift */,
 			);
 			path = ApolloUnitTestingDemo;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 			files = (
 				B023FCB621BCE9FC0085472C /* ViewController.swift in Sources */,
 				B0FDA4EF21BD872800AF1720 /* WorldStore.swift in Sources */,
+				B05DA9D021C5FA42007A8572 /* TableLoadingView.swift in Sources */,
 				B023FCB421BCE9FC0085472C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

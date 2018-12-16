@@ -48,6 +48,44 @@ final class WorldAPITests: XCTestCase {
         }
     }
     
+    func test_CountriesQueryNetworkFailure() {
+        
+        guard let results = MockGraphQLQuery.countries.responseObject else {
+            XCTFail()
+            return
+        }
+        
+        let query = CountriesQuery()
+        
+        withCache(initialRecords: [:]) { cache in
+            
+            let store = ApolloStore(cache: cache)
+            let client = ApolloClient(networkTransport: MockNetworkTransport(body: results,
+                                                                             simulateNetworkFailure: true),
+                                      store: store)
+            
+            let worldStore = World.Store(client: client)
+            
+            let expectation = self.expectation(description: "Fetching query")
+            
+            worldStore.fetchAllCountries { result in
+                defer {
+                    expectation.fulfill()
+                }
+                
+                switch result {
+                case let .failure(error):
+                    XCTAssertEqual(error, World.StoreError.network)
+                    return
+                case .success:
+                   XCTFail()
+                }
+            }
+            
+            self.waitForExpectations(timeout: 5, handler: nil)
+        }
+    }
+    
     func test_CountryQuery() {
         
         guard let results = MockGraphQLQuery.country.responseObject else {

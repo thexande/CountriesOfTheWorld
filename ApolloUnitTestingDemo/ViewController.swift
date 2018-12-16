@@ -133,10 +133,6 @@ final class CountriesViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        guard isViewLoaded else {
-            return
-        }
-        
         dispatcher?.dispatch(.willAppear)
     }
     

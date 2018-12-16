@@ -6,7 +6,7 @@ protocol TestCacheProvider: AnyObject {
                           execute test: (NormalizedCache) throws -> ()) rethrows
 }
 
-class InMemoryTestCacheProvider: TestCacheProvider {
+final class InMemoryTestCacheProvider: TestCacheProvider {
     /// Execute a test block rather than return a cache synchronously, since cache setup may be
     /// asynchronous at some point.
     static func withCache(initialRecords: RecordSet? = nil,

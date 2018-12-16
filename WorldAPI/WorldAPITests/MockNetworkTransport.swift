@@ -1,4 +1,3 @@
-import Dispatch
 import XCTest
 import Apollo
 

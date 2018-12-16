@@ -7,6 +7,7 @@ target 'ApolloUnitTestingDemo' do
   use_frameworks!
   pod 'Apollo'
   pod 'Result'
+  pod 'Anchorage'
 
   # Pods for ApolloUnitTestingDemo
 
