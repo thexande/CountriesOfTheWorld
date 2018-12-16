@@ -16,81 +16,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ApolloUnitTestingDemo/ViewController.swift"
-            timestampString = "566622700.076424"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "dispatch(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ApolloUnitTestingDemo/ViewController.swift"
-            timestampString = "566622700.077208"
+            timestampString = "566623104.662267"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "render(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ApolloUnitTestingDemo/ViewController.swift"
-            timestampString = "566622700.078051"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "refresh()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Result.Result&lt;Swift.Array&lt;WorldAPI.World.CountryLite&gt;, WorldAPI.World.StoreError&gt;) -&gt; () in ApolloUnitTestingDemo.CountriesPresenter.refresh() -&gt; ()"
-                  moduleName = "ApolloUnitTestingDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexandermurphy/Documents/thexande_apps/ApolloUnitTestingDemo/ApolloUnitTestingDemo/ViewController.swift"
-                  timestampString = "566620778.0450799"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "118">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Result.Result&lt;Swift.Array&lt;WorldAPI.World.CountryLite&gt;, WorldAPI.World.StoreError&gt;) -&gt; () in ApolloUnitTestingDemo.CountriesPresenter.refresh() -&gt; ()"
-                  moduleName = "ApolloUnitTestingDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexandermurphy/Documents/thexande_apps/ApolloUnitTestingDemo/ApolloUnitTestingDemo/ViewController.swift"
-                  timestampString = "566620778.047267"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "168">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

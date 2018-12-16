@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A413E959A64487EDB0D077C /* Pods_ApolloUnitTestingDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054CC167CA1CF6CFF1F1E161 /* Pods_ApolloUnitTestingDemo.framework */; };
 		B023FCB421BCE9FC0085472C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023FCB321BCE9FC0085472C /* AppDelegate.swift */; };
-		B023FCB621BCE9FC0085472C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023FCB521BCE9FC0085472C /* ViewController.swift */; };
+		B023FCB621BCE9FC0085472C /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023FCB521BCE9FC0085472C /* CountryDetailViewController.swift */; };
 		B023FCBB21BCE9FE0085472C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B023FCBA21BCE9FE0085472C /* Assets.xcassets */; };
 		B023FCBE21BCE9FE0085472C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B023FCBC21BCE9FE0085472C /* LaunchScreen.storyboard */; };
 		B023FCC921BCE9FF0085472C /* ApolloUnitTestingDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023FCC821BCE9FF0085472C /* ApolloUnitTestingDemoTests.swift */; };
@@ -17,6 +17,10 @@
 		B048384F21BE34F300437896 /* WorldAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B048384E21BE34F300437896 /* WorldAPI.framework */; };
 		B05C5C0321BE48A000C383E4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B05C5C0221BE489F00C383E4 /* README.md */; };
 		B05DA9D021C5FA42007A8572 /* TableLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DA9CF21C5FA42007A8572 /* TableLoadingView.swift */; };
+		B05DA9D221C5FA9C007A8572 /* CountryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DA9D121C5FA9C007A8572 /* CountryPresenter.swift */; };
+		B05DA9D421C5FAE4007A8572 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DA9D321C5FAE4007A8572 /* CountriesViewController.swift */; };
+		B05DA9D621C5FB02007A8572 /* CountriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DA9D521C5FB02007A8572 /* CountriesPresenter.swift */; };
+		B05DA9D821C5FB18007A8572 /* WorldCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DA9D721C5FB18007A8572 /* WorldCoordinator.swift */; };
 		B0FDA4EF21BD872800AF1720 /* WorldStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4EE21BD872800AF1720 /* WorldStore.swift */; };
 		D3C78E06EDE07B8EA1E111BB /* Pods_ApolloUnitTestingDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C0249891DF1835CDAC2540 /* Pods_ApolloUnitTestingDemoTests.framework */; };
 		D47C8B1C2E474FA86C8DBEAE /* Pods_ApolloUnitTestingDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F70418776BF90418BD687E /* Pods_ApolloUnitTestingDemoUITests.framework */; };
@@ -46,7 +50,7 @@
 		95C0249891DF1835CDAC2540 /* Pods_ApolloUnitTestingDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApolloUnitTestingDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B023FCB021BCE9FC0085472C /* ApolloUnitTestingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApolloUnitTestingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B023FCB321BCE9FC0085472C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B023FCB521BCE9FC0085472C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B023FCB521BCE9FC0085472C /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
 		B023FCBA21BCE9FE0085472C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B023FCBD21BCE9FE0085472C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B023FCBF21BCE9FE0085472C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +63,10 @@
 		B048384E21BE34F300437896 /* WorldAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WorldAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B05C5C0221BE489F00C383E4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B05DA9CF21C5FA42007A8572 /* TableLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableLoadingView.swift; sourceTree = "<group>"; };
+		B05DA9D121C5FA9C007A8572 /* CountryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPresenter.swift; sourceTree = "<group>"; };
+		B05DA9D321C5FAE4007A8572 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
+		B05DA9D521C5FB02007A8572 /* CountriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresenter.swift; sourceTree = "<group>"; };
+		B05DA9D721C5FB18007A8572 /* WorldCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCoordinator.swift; sourceTree = "<group>"; };
 		B0FDA4EE21BD872800AF1720 /* WorldStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldStore.swift; sourceTree = "<group>"; };
 		D27C863FBBB56B7F70EE4137 /* Pods-ApolloUnitTestingDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloUnitTestingDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApolloUnitTestingDemoUITests/Pods-ApolloUnitTestingDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EB2C052A512BAC6826357CBA /* Pods-ApolloUnitTestingDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloUnitTestingDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApolloUnitTestingDemoUITests/Pods-ApolloUnitTestingDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,12 +155,16 @@
 			isa = PBXGroup;
 			children = (
 				B023FCB321BCE9FC0085472C /* AppDelegate.swift */,
-				B023FCB521BCE9FC0085472C /* ViewController.swift */,
+				B023FCB521BCE9FC0085472C /* CountryDetailViewController.swift */,
 				B023FCBA21BCE9FE0085472C /* Assets.xcassets */,
 				B023FCBC21BCE9FE0085472C /* LaunchScreen.storyboard */,
 				B023FCBF21BCE9FE0085472C /* Info.plist */,
 				B0FDA4EE21BD872800AF1720 /* WorldStore.swift */,
 				B05DA9CF21C5FA42007A8572 /* TableLoadingView.swift */,
+				B05DA9D121C5FA9C007A8572 /* CountryPresenter.swift */,
+				B05DA9D321C5FAE4007A8572 /* CountriesViewController.swift */,
+				B05DA9D521C5FB02007A8572 /* CountriesPresenter.swift */,
+				B05DA9D721C5FB18007A8572 /* WorldCoordinator.swift */,
 			);
 			path = ApolloUnitTestingDemo;
 			sourceTree = "<group>";
@@ -405,10 +417,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B023FCB621BCE9FC0085472C /* ViewController.swift in Sources */,
+				B05DA9D621C5FB02007A8572 /* CountriesPresenter.swift in Sources */,
+				B023FCB621BCE9FC0085472C /* CountryDetailViewController.swift in Sources */,
 				B0FDA4EF21BD872800AF1720 /* WorldStore.swift in Sources */,
 				B05DA9D021C5FA42007A8572 /* TableLoadingView.swift in Sources */,
 				B023FCB421BCE9FC0085472C /* AppDelegate.swift in Sources */,
+				B05DA9D821C5FB18007A8572 /* WorldCoordinator.swift in Sources */,
+				B05DA9D221C5FA9C007A8572 /* CountryPresenter.swift in Sources */,
+				B05DA9D421C5FAE4007A8572 /* CountriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
