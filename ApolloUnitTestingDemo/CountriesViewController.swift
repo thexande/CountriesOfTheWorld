@@ -1,12 +1,11 @@
 import UIKit
 import WorldAPI
-import Anchorage
 
 protocol CountriesViewActionDispatching: AnyObject {
     func dispatch(_ action: CountriesViewController.Action)
 }
 
-final class CountriesViewController: UIViewController {
+final class CountriesViewController: UITableViewController {
     
     enum Action {
         case willAppear
@@ -14,8 +13,6 @@ final class CountriesViewController: UIViewController {
     }
     
     weak var dispatcher: CountriesViewActionDispatching?
-    private let tableView = UITableView(frame: .zero, style: .grouped)
-    private let loadingView = TableLoadingView()
     
     func render(_ properties: LoadableViewProperties<[World.CountryLite]>) {
         switch properties {
@@ -26,14 +23,13 @@ final class CountriesViewController: UIViewController {
         case .error:
             return
         case .loading:
-            view.bringSubviewToFront(loadingView)
+            return
         }
     }
     
     private var countries: [World.CountryLite] = [] {
         didSet {
             tableView.reloadData()
-            view.bringSubviewToFront(tableView)
         }
     }
     
@@ -45,30 +41,19 @@ final class CountriesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         title = "🌎 Countries"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        tableView.delegate = self
-        tableView.dataSource = self
         tableView.register(UITableViewCell.self,
                            forCellReuseIdentifier: String(describing: UITableViewCell.self))
-        
-        view.addSubview(tableView)
-        view.addSubview(loadingView)
-        loadingView.edgeAnchors == view.edgeAnchors
-        tableView.edgeAnchors == view.edgeAnchors
     }
-}
-
-extension CountriesViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView,
-                   numberOfRowsInSection section: Int) -> Int {
+    
+    override func tableView(_ tableView: UITableView,
+                            numberOfRowsInSection section: Int) -> Int {
         return countries.count
     }
     
-    func tableView(_ tableView: UITableView,
-                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self)) else {
             return UITableViewCell()
@@ -81,8 +66,8 @@ extension CountriesViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView,
-                   didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
         dispatcher?.dispatch(.selectedCountry(code: countries[indexPath.item].code))
     }
 }
