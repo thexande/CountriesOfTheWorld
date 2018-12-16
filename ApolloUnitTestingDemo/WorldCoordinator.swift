@@ -22,10 +22,9 @@ final class WorldCoordinator: CountriesPresenterActionDispatching {
     }
     
     func dispatch(_ action: CountriesPresenter.Action) {
-        if case .selectedCountry(let code) = action {
-            print(code)
-            
+        if case let .selectedCountry(code, title) = action {
             let view = CountryDetailViewController()
+            view.title = title
             countryPresenter = CountryPresenter(code: code)
             view.dispatcher = countryPresenter
             

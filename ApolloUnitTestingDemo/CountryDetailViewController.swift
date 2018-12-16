@@ -43,7 +43,6 @@ final class CountryDetailViewController: UITableViewController {
         case let .data(properties):
             DispatchQueue.main.async {
                 self.sections = properties.sections
-                self.title = properties.title
             }
         case .error:
             return
@@ -100,7 +99,7 @@ final class CountryDetailViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView,
                             titleForHeaderInSection section: Int) -> String? {
-        return sections[section].title
+        return (sections[section].items.count < 0 ? nil : sections[section].title)
     }
     
 }

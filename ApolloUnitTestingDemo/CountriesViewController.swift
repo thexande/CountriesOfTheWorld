@@ -9,10 +9,12 @@ final class CountriesViewController: UITableViewController {
     
     enum Action {
         case willAppear
-        case selectedCountry(code: String)
+        case selectedCountry(code: String, title: String)
+        case refresh
     }
     
     weak var dispatcher: CountriesViewActionDispatching?
+    private let loading = TableLoadingView()
     
     func render(_ properties: LoadableViewProperties<[World.CountryLite]>) {
         switch properties {
@@ -23,12 +25,13 @@ final class CountriesViewController: UITableViewController {
         case .error:
             return
         case .loading:
-            return
+            self.tableView.bringSubviewToFront(loading)
         }
     }
     
     private var countries: [World.CountryLite] = [] {
         didSet {
+            tableView.sendSubviewToBack(loading)
             tableView.reloadData()
         }
     }
@@ -45,6 +48,21 @@ final class CountriesViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.register(UITableViewCell.self,
                            forCellReuseIdentifier: String(describing: UITableViewCell.self))
+        
+        tableView.refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        
+        tableView.tableFooterView = UIView()
+        tableView.backgroundView = self.loading
+    }
+    
+    @objc func refreshData() {
+        dispatcher?.dispatch(.refresh)
+        
+        // prevent the refresh control from being janky
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.refreshControl?.endRefreshing()
+        }
     }
     
     override func tableView(_ tableView: UITableView,
@@ -68,7 +86,9 @@ final class CountriesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
-        dispatcher?.dispatch(.selectedCountry(code: countries[indexPath.item].code))
+        let country = countries[indexPath.item]
+        dispatcher?.dispatch(.selectedCountry(code: country.code,
+                                              title: "\(country.emoji) \(country.name)"))
     }
 }
 

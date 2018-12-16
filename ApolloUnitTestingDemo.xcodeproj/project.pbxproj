@@ -21,6 +21,8 @@
 		B05DA9D421C5FAE4007A8572 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DA9D321C5FAE4007A8572 /* CountriesViewController.swift */; };
 		B05DA9D621C5FB02007A8572 /* CountriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DA9D521C5FB02007A8572 /* CountriesPresenter.swift */; };
 		B05DA9D821C5FB18007A8572 /* WorldCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DA9D721C5FB18007A8572 /* WorldCoordinator.swift */; };
+		B05DA9D921C60708007A8572 /* WorldAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B048384E21BE34F300437896 /* WorldAPI.framework */; };
+		B05DA9DA21C60708007A8572 /* WorldAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B048384E21BE34F300437896 /* WorldAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0FDA4EF21BD872800AF1720 /* WorldStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FDA4EE21BD872800AF1720 /* WorldStore.swift */; };
 		D3C78E06EDE07B8EA1E111BB /* Pods_ApolloUnitTestingDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C0249891DF1835CDAC2540 /* Pods_ApolloUnitTestingDemoTests.framework */; };
 		D47C8B1C2E474FA86C8DBEAE /* Pods_ApolloUnitTestingDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F70418776BF90418BD687E /* Pods_ApolloUnitTestingDemoUITests.framework */; };
@@ -42,6 +44,20 @@
 			remoteInfo = ApolloUnitTestingDemo;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B05DA9DB21C60708007A8572 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B05DA9DA21C60708007A8572 /* WorldAPI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		054CC167CA1CF6CFF1F1E161 /* Pods_ApolloUnitTestingDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApolloUnitTestingDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B048384F21BE34F300437896 /* WorldAPI.framework in Frameworks */,
+				B05DA9D921C60708007A8572 /* WorldAPI.framework in Frameworks */,
 				7A413E959A64487EDB0D077C /* Pods_ApolloUnitTestingDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,6 +216,7 @@
 				B023FCAD21BCE9FC0085472C /* Frameworks */,
 				B023FCAE21BCE9FC0085472C /* Resources */,
 				2529DECC960DA73D1AEAC947 /* [CP] Embed Pods Frameworks */,
+				B05DA9DB21C60708007A8572 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

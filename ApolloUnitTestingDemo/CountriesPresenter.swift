@@ -8,7 +8,7 @@ protocol CountriesPresenterActionDispatching: AnyObject {
 final class CountriesPresenter: CountriesViewActionDispatching {
     
     enum Action {
-        case selectedCountry(code: String)
+        case selectedCountry(code: String, title: String)
     }
     
     private let store: WorldStoreInterface
@@ -32,8 +32,10 @@ final class CountriesPresenter: CountriesViewActionDispatching {
         switch action {
         case .willAppear:
             refresh()
-        case let .selectedCountry(code):
-            dispatcher?.dispatch(.selectedCountry(code: code))
+        case let .selectedCountry(code, title):
+            dispatcher?.dispatch(.selectedCountry(code: code, title: title))
+        case .refresh:
+            refresh()
         }
     }
     
