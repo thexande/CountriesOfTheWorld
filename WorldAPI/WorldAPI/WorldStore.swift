@@ -216,9 +216,6 @@ fileprivate extension World.CountryDetail {
     }
 }
 
-// MARK:- `WorldStoreInterface`
-
-
 extension World {
     public final class Factory {
         

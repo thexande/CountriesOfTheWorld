@@ -3,6 +3,18 @@ import XCTest
 @testable import Apollo
 
 final class WorldAPITests: XCTestCase {
+    
+    func test_Factory() {
+        
+        guard let url = URL(string: "http://www.google.com") else {
+            XCTFail()
+            return
+        }
+        
+        _ = World.Factory().makeStore(with: url)
+        
+        XCTAssert(true, "pass")
+    }
 
     func test_CountriesQuery() {
         
@@ -86,6 +98,116 @@ final class WorldAPITests: XCTestCase {
         }
     }
     
+    func test_CountryQueryNetworkFailure() {
+        
+        guard let results = MockGraphQLQuery.countries.responseObject else {
+            XCTFail()
+            return
+        }
+        
+        let query = CountriesQuery()
+        
+        withCache(initialRecords: [:]) { cache in
+            
+            let store = ApolloStore(cache: cache)
+            let client = ApolloClient(networkTransport: MockNetworkTransport(body: results,
+                                                                             simulateNetworkFailure: true),
+                                      store: store)
+            
+            let worldStore = World.Store(client: client)
+            
+            let expectation = self.expectation(description: "Fetching query")
+            
+            worldStore.fetchCountry(code: "USA") { result in
+                defer {
+                    expectation.fulfill()
+                }
+                
+                switch result {
+                case let .failure(error):
+                    XCTAssertEqual(error, World.StoreError.network)
+                    return
+                case .success:
+                    XCTFail()
+                }
+            }
+            
+            self.waitForExpectations(timeout: 5, handler: nil)
+        }
+    }
+    
+    func test_CountriesQueryParsingFailure() {
+        
+        let results: JSONObject = ["👍": 0xDEADBEEF]
+        
+        let query = CountriesQuery()
+        
+        withCache(initialRecords: [:]) { cache in
+            
+            let store = ApolloStore(cache: cache)
+            let client = ApolloClient(networkTransport: MockNetworkTransport(body: results,
+                                                                             simulateNetworkFailure: false),
+                                      store: store)
+            
+            let worldStore = World.Store(client: client)
+            
+            let expectation = self.expectation(description: "Fetching query")
+            
+            worldStore.fetchAllCountries { result in
+                defer {
+                    expectation.fulfill()
+                }
+                
+                switch result {
+                case let .failure(error):
+                    XCTAssertEqual(error, World.StoreError.parsing)
+                    return
+                case .success:
+                    XCTFail()
+                }
+            }
+            
+            self.waitForExpectations(timeout: 5, handler: nil)
+        }
+    }
+    
+    
+    func test_CountryQueryParsingFailure() {
+        
+        let results: JSONObject = ["👍": 0xDEADBEEF]
+        
+        let query = CountriesQuery()
+        
+        withCache(initialRecords: [:]) { cache in
+            
+            let store = ApolloStore(cache: cache)
+            let client = ApolloClient(networkTransport: MockNetworkTransport(body: results,
+                                                                             simulateNetworkFailure: false),
+                                      store: store)
+            
+            let worldStore = World.Store(client: client)
+            
+            let expectation = self.expectation(description: "Fetching query")
+            
+            worldStore.fetchCountry(code: "USA") { result in
+                defer {
+                    expectation.fulfill()
+                }
+                
+                switch result {
+                case let .failure(error):
+                    XCTAssertEqual(error, World.StoreError.parsing)
+                    return
+                case .success:
+                    XCTFail()
+                }
+            }
+            
+            self.waitForExpectations(timeout: 5, handler: nil)
+        }
+    }
+    
+    
     func test_CountryQuery() {
         
         guard let results = MockGraphQLQuery.country.responseObject else {
@@ -114,8 +236,15 @@ final class WorldAPITests: XCTestCase {
                 case .failure:
                     XCTFail()
                     return
-                case let .success(data):
-                    XCTAssert(true)
+                case let .success(worldCountry):
+                    let country = World.CountryDetail(code: "AE",
+                                                      name: "United Arab Emirates",
+                                                      currency: "AED",
+                                                      phone: "971",
+                                                      emoji: "🇦🇪",
+                                                      languages: [World.CountryDetail.Language(name: "Arabic")],
+                                                      continent: World.CountryDetail.Continent(name: "Asia"))
+                    XCTAssertEqual(country, worldCountry)
                 }
             }
             
